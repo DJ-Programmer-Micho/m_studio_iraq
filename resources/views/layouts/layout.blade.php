@@ -30,7 +30,7 @@
     <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
 
     <link href="{{asset('assets/dashboard/css/toaster.css')}}" rel="stylesheet" type="text/css">
-    @yield('rest_css')
+    @yield('dash_css')
     <style>
         .content-bg-met{
             background-color: #293145!important;
@@ -115,7 +115,7 @@
             </li>
             <!-- Nav Item - Categories -->
             <li class="nav-item {{(request()->path() == 'rest/category') ? 'active' : ''}}">
-                <a class="nav-link"  href="#">
+                <a class="nav-link"  href="{{route('asd')}}">
                     <lord-icon
                     src="https://cdn.lordicon.com/kndkiwmf.json"
                     trigger="hover"
@@ -608,7 +608,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid content-bg-met">
-                    @yield('rest_content')
+                    @yield('dash_content')
                 </div>
                 <!-- /.container-fluid -->
 
@@ -689,8 +689,8 @@
     @stack('cropper')
     @stack('drag')
     @stack('color');
-    @stack('rest_script')
-    @yield('rest_script')
+    @stack('dash_script')
+    @yield('dash_script')
     <form id="languageForm" action="#" method="post">
         @csrf
         <input type="hidden" name="locale" id="selectedLocale" value="{{ app()->getLocale() }}">
