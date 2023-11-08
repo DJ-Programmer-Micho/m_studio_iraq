@@ -27,10 +27,9 @@
     @stack('cropper_links')
     @stack('style_tag')
     @stack('support')
-    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-
-    <link href="{{asset('assets/dashboard/css/toaster.css')}}" rel="stylesheet" type="text/css">
     @yield('dash_css')
+    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+    <link href="{{asset('assets/dashboard/css/toaster.css')}}" rel="stylesheet" type="text/css">
     <style>
         .content-bg-met{
             background-color: #293145!important;
@@ -659,33 +658,23 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('assets/dashboard/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('assets/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="{{asset('assets/dashboard/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="{{asset('assets/dashboard/js/sb-admin-2.min.js')}}"></script>
-
     <!-- Page level plugins -->
     <script src="{{asset('assets/dashboard/vendor/chart.js/Chart.min.js')}}"></script>
-    
-    <!-- Page level custom scripts -->
-    {{-- <script src="{{asset('assets/dashboard/js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('assets/dashboard/js/demo/chart-pie-demo.js')}}"></script> --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.5/cropper.min.js"></script> --}}
-    {{-- @stack('cropper') --}}
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     @livewireScripts
     <script>
-        window.addEventListener('alert', event => { 
-                     toastr[event.detail.type](event.detail.message, 
-                     event.detail.title ?? ''), toastr.options = {
-                            "closeButton": true,
-                            "progressBar": true,
-                        }
-                    });
-        </script>
+        window.addEventListener('alert', event => {
+        toastr[event.detail.type](event.detail.message, event.detail.title ?? '');
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+        };
+        });
+    </script>
     @stack('cropper')
     @stack('drag')
     @stack('color');

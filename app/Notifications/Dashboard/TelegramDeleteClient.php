@@ -7,24 +7,18 @@ use Illuminate\Notifications\Notification;
 use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramMessage;
 
-class TelegramNewClient extends Notification
+class TelegramDeleteClient extends Notification
 {
     protected $c_id;
     protected $companyName;
     protected $clientName;
-    protected $email;
-    protected $address;
-    protected $phoneOne;
     protected $tele_id;
 
-    public function __construct($c_id, $companyName, $clientName, $email, $address, $phoneOne, $tele_id)
+    public function __construct($c_id, $companyName, $clientName, $tele_id)
     {
         $this->c_id = $c_id;
         $this->companyName = $companyName;
         $this->clientName = $clientName;
-        $this->email = $email;
-        $this->address = $address;
-        $this->phoneOne = $phoneOne;
         $this->tele_id = $tele_id;
     }
 
@@ -46,9 +40,6 @@ class TelegramNewClient extends Notification
        . "*" .'-----------------'."*\n"
        . "*" .'Company Name: '. $this->companyName . "*\n"
        . "*" .'Client Name: '. $this->clientName . "*\n"
-       . "*" .'Email Address: '. $this->email . "*\n"
-       . "*" .'Phone Number: '. $this->phoneOne . "*\n"
-       . "*" .'Address: '. $this->address . "*\n"
         );
     }
     
