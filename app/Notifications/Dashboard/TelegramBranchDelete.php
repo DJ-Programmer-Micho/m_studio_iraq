@@ -7,18 +7,18 @@ use Illuminate\Notifications\Notification;
 use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramMessage;
 
-class TelegramDeleteClient extends Notification
+class TelegramBranchDelete extends Notification
 {
-    protected $c_id;
-    protected $companyName;
-    protected $clientName;
+    protected $b_id;
+    protected $branchName;
+    protected $branchManager;
     protected $tele_id;
 
-    public function __construct($c_id, $companyName, $clientName, $tele_id)
+    public function __construct($b_id, $branchName, $branchManager, $tele_id)
     {
-        $this->c_id = $c_id;
-        $this->companyName = $companyName;
-        $this->clientName = $clientName;
+        $this->b_id = $b_id;
+        $this->branchName = $branchName;
+        $this->branchManager = $branchManager;
         $this->tele_id = $tele_id;
     }
 
@@ -29,17 +29,17 @@ class TelegramDeleteClient extends Notification
 
     public function toTelegram($notifiable)
     {
-        $registrationId = "#CLI-" . rand(10, 99);
+        $registrationId = "#BRCH-" . rand(10, 99);
         $registration3Id = rand(100, 999);
 
        return TelegramMessage::create()
        ->to($this->tele_id)
-       ->content("*" . 'CLIENT DELETED' . "*\n"
+       ->content("*" . 'BRANCH DELETED' . "*\n"
        . "*" .'-----------------'."*\n" 
-       . "*" .'COMPANY-ID: '. $registrationId . '-'. $this->c_id .'-' . $registration3Id . "*\n"
+       . "*" .'COMPANY-ID: '. $registrationId . '-'. $this->b_id .'-' . $registration3Id . "*\n"
        . "*" .'-----------------'."*\n"
-       . "*" .'Company Name: '. $this->companyName . "*\n"
-       . "*" .'Client Name: '. $this->clientName . "*\n"
+       . "*" .'Branch Name: '. $this->branchName . "*\n"
+       . "*" .'Branch Manager: '. $this->branchManager . "*\n"
         );
     }
     

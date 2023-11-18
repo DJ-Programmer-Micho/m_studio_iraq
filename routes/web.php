@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('layouts.layout');
 });
 
-Route::get('/client', [DashboardController::class, 'client'])->name('asd');
+Route::get('/client', [DashboardController::class, 'client'])->name('client');
+Route::get('/service', [DashboardController::class, 'service'])->name('service');
+Route::get('/branch', [DashboardController::class, 'branch'])->name('branch');

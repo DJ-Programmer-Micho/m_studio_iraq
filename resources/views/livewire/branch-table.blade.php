@@ -1,8 +1,8 @@
 <div>
-    @include('livewire.service-form')
+    @include('livewire.branch-form')
     <div class="m-4">
         <h2 class="text-lg font-medium mr-auto">
-            <b>SERVICES TABLE</b>
+            <b>BRANCHES TABLE</b>
         </h2>
         <div class="row d-flex justify-content-between m-0">
             <div>
@@ -12,7 +12,7 @@
             </div>
             <div>
                 <div class="">
-                    <button class="btn btn-info" data-toggle="modal" data-target="#createServiceModal">{{__('Add New Service')}}</button>
+                    <button class="btn btn-info" data-toggle="modal" data-target="#createBranchModal">{{__('Add New Branch')}}</button>
                 </div>
             </div>
         </div>
@@ -40,20 +40,18 @@
                                 </span>
                             @elseif ($col === 'priority')        
                                 <input type="number" id="priority_{{ $item->id }}" value="{{ $item->priority }}" class="form-control bg-dark text-white">
-                            @elseif ($col === 'branch')   
-                               {{ $item->branch->branchName }}
                             @else
                                 {{ data_get($item, $col) }}
                             @endif
                         </td>
                         @endforeach
                         <td>
-                            <button type="button" data-toggle="modal" data-target="#updateServiceModal"
-                                wire:click="editService({{ $item->id }})" class="btn btn-primary m-1">
+                            <button type="button" data-toggle="modal" data-target="#updateBranchModal"
+                                wire:click="editBranch({{ $item->id }})" class="btn btn-primary m-1">
                                 <i class="far fa-edit"></i>
                             </button>
-                            <button type="button" data-toggle="modal" data-target="#deleteServiceModal"
-                                wire:click="deleteService({{ $item->id }})" class="btn btn-danger m-1">
+                            <button type="button" data-toggle="modal" data-target="#deleteBranchModal"
+                                wire:click="deleteBranch({{ $item->id }})" class="btn btn-danger m-1">
                                 <i class="far fa-trash-alt"></i>
                             </button>
                         </td>

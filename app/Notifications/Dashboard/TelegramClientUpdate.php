@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramMessage;
 
-class TelegramUpdateClient extends Notification
+class TelegramClientUpdate extends Notification
 {
     protected $c_id;
     protected $companyName;

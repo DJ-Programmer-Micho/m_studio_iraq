@@ -112,9 +112,9 @@
                 </lord-icon>
                     <span>{{__('Users')}}</span></a>
             </li>
-            <!-- Nav Item - Categories -->
-            <li class="nav-item {{(request()->path() == 'rest/category') ? 'active' : ''}}">
-                <a class="nav-link"  href="{{route('asd')}}">
+            <!-- Nav Item - }مهثىفس -->
+            <li class="nav-item {{(request()->path() == 'client') ? 'active' : ''}}">
+                <a class="nav-link"  href="{{route('client')}}">
                     <lord-icon
                     src="https://cdn.lordicon.com/kndkiwmf.json"
                     trigger="hover"
@@ -123,9 +123,21 @@
                     </lord-icon>
                     <span>{{__('Clients')}}</span></a>
             </li>
-            <!-- Nav Item - Food -->
-            <li class="nav-item  {{(request()->path() == 'rest/food') ? 'active' : ''}}">
-                <a class="nav-link" href="#">
+            <!-- Nav Item - Branch -->
+            <li class="nav-item  {{(request()->path() == 'branch') ? 'active' : ''}}">
+                <a class="nav-link" href="{{route('branch')}}">
+                    <lord-icon
+                    src="https://cdn.lordicon.com/dnrurqiv.json"
+                    trigger="loop"
+                    delay="2000"
+                    colors="primary:#eeeeee,secondary:#cc0022"
+                    style="width:48px;height:48px">
+                </lord-icon>
+                    <span>{{__('Branches')}}</span></a>
+            </li>
+            <!-- Nav Item - Service -->
+            <li class="nav-item  {{(request()->path() == 'service') ? 'active' : ''}}">
+                <a class="nav-link" href="{{route('service')}}">
                     <lord-icon
                     src="https://cdn.lordicon.com/wzwygmng.json"
                     trigger="loop"
@@ -135,6 +147,7 @@
                 </lord-icon>
                     <span>{{__('Services')}}</span></a>
             </li>
+
             <!-- Nav Item - Offer -->
             <li class="nav-item  {{(request()->path() == 'rest/offer') ? 'active' : ''}}">
                 <a class="nav-link" href="#">

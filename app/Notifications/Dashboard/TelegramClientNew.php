@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramMessage;
 
-class TelegramNewClient extends Notification
+class TelegramClientNew extends Notification
 {
     protected $c_id;
     protected $companyName;
@@ -40,7 +40,7 @@ class TelegramNewClient extends Notification
 
        return TelegramMessage::create()
        ->to($this->tele_id)
-       ->content("*" . 'CLIENT DELETED' . "*\n"
+       ->content("*" . 'CLIENT ADDED' . "*\n"
        . "*" .'-----------------'."*\n" 
        . "*" .'COMPANY-ID: '. $registrationId . '-'. $this->c_id .'-' . $registration3Id . "*\n"
        . "*" .'-----------------'."*\n"

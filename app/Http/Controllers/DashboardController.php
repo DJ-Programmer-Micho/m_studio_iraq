@@ -7,10 +7,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     // PAGE VIEW
-    // public function dashboard(){
-    //     return view('dashboard.rest.pages.dashboard.index');
-    // } // END FUNCTION (DASHBOARD)
-    public function client(){
-        return view('pages.client.index');
-    } // END FUNCTION (DASHBOARD)
+    public function client(){return view('pages.client.index');} // END FUNCTION (CLIENTS)
+    public function service(){return view('pages.service.index');} // END FUNCTION (SERVICE)
+    public function branch(){return view('pages.branch.index');} // END FUNCTION (BRANCH)
 }
