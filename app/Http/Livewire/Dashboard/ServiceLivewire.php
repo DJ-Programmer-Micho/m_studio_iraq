@@ -227,8 +227,8 @@ class ServiceLivewire extends Component
         $this->branch_select_option = Branch::get();
 // dd( $this->branch_select_option);
         $colspan = 6;
-        $cols_th = ['#','Branch Name','Service Code','Service Name','Default Cost', 'Actions'];
-        $cols_td = ['id','branch','serviceCode','serviceName','cost'];
+        $cols_th = ['#','Branch Name','Service Name','Service Code','Default Cost', 'Actions'];
+        $cols_td = ['id','branch','serviceName','serviceCode','cost'];
 
         $data = Service::query()
         ->where(function ($query) {
